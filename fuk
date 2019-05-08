@@ -1,0 +1,5 @@
+#!/bin/sh
+# Kill all processes listening on a port
+# Usage: fuk PORT
+
+fuser -k $1/tcp
