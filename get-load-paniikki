@@ -1,5 +1,6 @@
 #!/bin/sh
+# Aalto Linux computer names: https://www.aalto.fi/en/services/linux-computer-names-in-it-classrooms
 
 parallel -i -j100 ssh -oBatchMode=yes -oConnectTimeout=2 {} 'test -z "$(users)" && echo $(cut -d" " -f1-3 /proc/loadavg) {}' -- \
-	 brainfuck deadfish bogo befunge bit smurf piet emo entropy false fractran fugue glass haifu headache intercal malbolge numberwang haifu ook regexpl shakespeare smith spaghetti thue unlambda wake whenever whitespace zombie \
+	 befunge bit bogo brainfuck deadfish emo entropy false fractran fugue glass haifu headache intercal malbolge numberwang ook piet regexpl remorse rename shakespeare smith smurf spaghetti thue unlambda wake whenever whitespace zombie \
     | sort -n
